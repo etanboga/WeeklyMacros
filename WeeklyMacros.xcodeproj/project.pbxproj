@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71F6F4EB204CB21B009F2B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */; };
-		71F6F4ED204CB21B009F2B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4EC204CB21B009F2B1A /* ViewController.swift */; };
+		71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */; };
 		71F6F4F0204CB21B009F2B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F6F4EE204CB21B009F2B1A /* Main.storyboard */; };
 		71F6F4F3204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4F1204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld */; };
 		71F6F4F5204CB21B009F2B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F6F4F4204CB21B009F2B1A /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		71F6F4E7204CB21B009F2B1A /* WeeklyMacros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyMacros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71F6F4EC204CB21B009F2B1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeMacrosVC.swift; sourceTree = "<group>"; };
 		71F6F4EF204CB21B009F2B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71F6F4F2204CB21B009F2B1A /* WeeklyMacros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeklyMacros.xcdatamodel; sourceTree = "<group>"; };
 		71F6F4F4204CB21B009F2B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */,
-				71F6F4EC204CB21B009F2B1A /* ViewController.swift */,
+				71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */,
 				71F6F4EE204CB21B009F2B1A /* Main.storyboard */,
 				71F6F4F4204CB21B009F2B1A /* Assets.xcassets */,
 				71F6F4F6204CB21B009F2B1A /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F6F4ED204CB21B009F2B1A /* ViewController.swift in Sources */,
+				71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */,
 				71F6F4F3204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld in Sources */,
 				71F6F4EB204CB21B009F2B1A /* AppDelegate.swift in Sources */,
 			);
