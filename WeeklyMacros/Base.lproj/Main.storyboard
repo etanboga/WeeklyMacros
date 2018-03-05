@@ -137,7 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="caloriesTextField" destination="8qJ-EX-6ti" id="ybm-NU-3WM"/>
-                        <outlet property="carboydratesTextField" destination="Wih-LT-FLa" id="Ynq-Kb-CD3"/>
+                        <outlet property="carbohydratesTextField" destination="Wih-LT-FLa" id="OCz-0L-AfT"/>
                         <outlet property="errorLabel" destination="zgk-X4-IBO" id="n6x-e2-6kl"/>
                         <outlet property="fatTextField" destination="wki-s3-Hhz" id="CQI-f5-LeU"/>
                         <outlet property="proteinTextField" destination="RZD-Hj-p38" id="Aw9-Ka-k7f"/>

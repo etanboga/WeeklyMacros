@@ -15,6 +15,7 @@
 		71F6F4F8204CB21B009F2B1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F6F4F6204CB21B009F2B1A /* LaunchScreen.storyboard */; };
 		71F6F503204CB21B009F2B1A /* WeeklyMacrosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F502204CB21B009F2B1A /* WeeklyMacrosTests.swift */; };
 		71F6F50E204CB21B009F2B1A /* WeeklyMacrosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F50D204CB21B009F2B1A /* WeeklyMacrosUITests.swift */; };
+		71F6F51D204CC81D009F2B1A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F51C204CC81D009F2B1A /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		71F6F509204CB21B009F2B1A /* WeeklyMacrosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyMacrosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F6F50D204CB21B009F2B1A /* WeeklyMacrosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyMacrosUITests.swift; sourceTree = "<group>"; };
 		71F6F50F204CB21B009F2B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71F6F51C204CC81D009F2B1A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		71F6F4E9204CB21B009F2B1A /* WeeklyMacros */ = {
 			isa = PBXGroup;
 			children = (
+				71F6F51B204CC804009F2B1A /* Utilities */,
 				71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */,
 				71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */,
 				71F6F4EE204CB21B009F2B1A /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				71F6F50F204CB21B009F2B1A /* Info.plist */,
 			);
 			path = WeeklyMacrosUITests;
+			sourceTree = "<group>";
+		};
+		71F6F51B204CC804009F2B1A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71F6F51C204CC81D009F2B1A /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			files = (
 				71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */,
 				71F6F4F3204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld in Sources */,
+				71F6F51D204CC81D009F2B1A /* Utilities.swift in Sources */,
 				71F6F4EB204CB21B009F2B1A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
