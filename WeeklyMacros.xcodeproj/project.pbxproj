@@ -16,6 +16,7 @@
 		71F6F503204CB21B009F2B1A /* WeeklyMacrosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F502204CB21B009F2B1A /* WeeklyMacrosTests.swift */; };
 		71F6F50E204CB21B009F2B1A /* WeeklyMacrosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F50D204CB21B009F2B1A /* WeeklyMacrosUITests.swift */; };
 		71F6F51D204CC81D009F2B1A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F51C204CC81D009F2B1A /* Utilities.swift */; };
+		71F6F51F204CE669009F2B1A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F51E204CE669009F2B1A /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		71F6F50D204CB21B009F2B1A /* WeeklyMacrosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyMacrosUITests.swift; sourceTree = "<group>"; };
 		71F6F50F204CB21B009F2B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71F6F51C204CC81D009F2B1A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		71F6F51E204CE669009F2B1A /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				71F6F51C204CC81D009F2B1A /* Utilities.swift */,
+				71F6F51E204CE669009F2B1A /* CoreDataHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F6F51F204CE669009F2B1A /* CoreDataHelper.swift in Sources */,
 				71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */,
 				71F6F4F3204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld in Sources */,
 				71F6F51D204CC81D009F2B1A /* Utilities.swift in Sources */,

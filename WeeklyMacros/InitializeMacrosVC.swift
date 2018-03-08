@@ -41,6 +41,15 @@ class InitializeMacrosVC: UIViewController {
         }
         print("passed all checks for number input")
         
+        if let calories = caloriesTextField?.text, let carbohydrates = carbohydratesTextField?.text,
+        let protein = proteinTextField?.text, let fat = fatTextField?.text {
+            if let caloriesAsDouble = Double(calories), let carbohydratesAsDouble = Double(carbohydrates),
+                    let proteinAsDouble = Double(protein), let fatAsDouble = Double(fat) {
+                CoreDataHelper.saveMacros(calories: caloriesAsDouble, carbohydrates: carbohydratesAsDouble, protein: proteinAsDouble, fat: fatAsDouble)
+            } else {
+                print("didn't convert to double")
+            }
+        }
     }
     
 }
