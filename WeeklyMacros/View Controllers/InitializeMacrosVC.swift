@@ -34,12 +34,10 @@ class InitializeMacrosVC: UIViewController {
         if (!passedEmptyChecks) {
             return
         }
-        print("passed all checks for empty input")
         let passedNumberChecks = Utilities.performNumberChecks(caloriesTextField: caloriesTextField, carbohydratesTextField: carbohydratesTextField, proteinTextField: proteinTextField, fatTextField: fatTextField, errorLabel: errorLabel)
         if (!passedNumberChecks) {
             return
         }
-        print("passed all checks for number input")
         
         if let calories = caloriesTextField?.text, let carbohydrates = carbohydratesTextField?.text,
         let protein = proteinTextField?.text, let fat = fatTextField?.text {
