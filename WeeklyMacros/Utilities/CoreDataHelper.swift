@@ -12,15 +12,21 @@ import UIKit
 
 class CoreDataHelper {
     static func saveMacros(calories: Double, carbohydrates: Double, protein: Double, fat: Double) {
+        //delete current macros before saving new ones
+        CoreDataHelper.deleteMacros()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Macros", in: context)
         let newMacro = NSManagedObject(entity: entity!, insertInto: context)
         let caloriesForWeek = calories * Constants.daysInWeek
+        let carbsForWeek = carbohydrates * Constants.daysInWeek
+        let proteinForWeek = protein * Constants.daysInWeek
+        let fatForWeek = fat * Constants.daysInWeek
+        newMacro.setValue(Constants.appUser, forKey: "username")
         newMacro.setValue(caloriesForWeek, forKey: "calories")
-        newMacro.setValue(carbohydrates, forKey: "carbohydrates")
-        newMacro.setValue(protein, forKey: "protein")
-        newMacro.setValue(fat, forKey: "fat")
+        newMacro.setValue(carbsForWeek, forKey: "carbohydrates")
+        newMacro.setValue(proteinForWeek, forKey: "protein")
+        newMacro.setValue(fatForWeek, forKey: "fat")
         do {
             try context.save()
             print("saved to Core Data")
@@ -29,16 +35,43 @@ class CoreDataHelper {
         }
     }
     
-    static func getMacros() -> [NSManagedObject]? {
+    static func updateMacros(calories: Double, carbohydrates: Double, protein: Double, fat: Double) {
+        let currentMacros = CoreDataHelper.getMacros()
+    }
+    
+    static func getMacros() -> NSManagedObject? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Macros")
         do {
-            let macros = try context.fetch(fetchRequest)
-            return macros
+            let results = try context.fetch(fetchRequest)
+            if results.count > 0 {
+                for result in results {
+                    if let username = result.value(forKey: "username") as? String {
+                        if (username == Constants.appUser) {
+                            return result
+                        }
+                    }
+                }
+            }
         } catch let error as NSError {
             print("Couldn't fetch. \(error), \(error.userInfo)")
         }
         return nil
+    }
+    
+    static func deleteMacros() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Macros")
+        do {
+            let result = try context.fetch(fetchRequest)
+            for object in result {
+                context.delete(object)
+            }
+        }
+        catch let error as NSError {
+            print("Couldn't delete. \(error), \(error.userInfo)")
+        }
     }
 }

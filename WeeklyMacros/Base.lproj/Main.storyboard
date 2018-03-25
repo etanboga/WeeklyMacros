@@ -261,6 +261,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xbo-mF-SyA"/>
                     </view>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="VFw-T3-xRB" id="Ftq-Yl-4sF"/>
+                        <outlet property="carbohydratesLabel" destination="A7K-hH-PW9" id="vxq-6Y-iRw"/>
+                        <outlet property="fatLabel" destination="APi-TY-sXF" id="5Zq-CV-5M9"/>
+                        <outlet property="proteinLabel" destination="0Wc-JT-MOi" id="MFU-uv-Om4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDf-Kd-Hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

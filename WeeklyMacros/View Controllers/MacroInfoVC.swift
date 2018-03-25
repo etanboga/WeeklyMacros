@@ -9,6 +9,11 @@
 import UIKit
 
 class MacroInfoVC : UIViewController {
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var carbohydratesLabel: UILabel!
+    @IBOutlet weak var proteinLabel: UILabel!
+    @IBOutlet weak var fatLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.retrieveMacros()
@@ -20,12 +25,14 @@ class MacroInfoVC : UIViewController {
     
     private func retrieveMacros() {
         guard let currentMacros = CoreDataHelper.getMacros() else { return }
-        for macro in currentMacros {
-            print(macro)
-        }
-//        let calories = currentMacros.value(forKey: "calories") as! Double
-//        let carbohydrates = currentMacros.value(forKey: "carbohydrates") as! Double
-//        let protein = currentMacros.value(forKey: "protein") as! Double
-//        let fat = currentMacros.value(forKey: "fat")as! Double
+        let caloriesString = String(currentMacros.value(forKey: "calories") as! Double / Constants.daysInWeek) + "g"
+        let carbohydratesString = String(currentMacros.value(forKey: "carbohydrates") as! Double / Constants.daysInWeek) + "g"
+        let proteinString = String(currentMacros.value(forKey: "protein") as! Double / Constants.daysInWeek) + "g"
+        let fatString = String(currentMacros.value(forKey: "fat") as! Double / Constants.daysInWeek) + "g"
+        
+        caloriesLabel.text = caloriesString
+        carbohydratesLabel.text = carbohydratesString
+        proteinLabel.text = proteinString
+        fatLabel.text = fatString
     }
 }
