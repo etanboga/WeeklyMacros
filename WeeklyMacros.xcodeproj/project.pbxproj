@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7174AA012050C82D0027AD46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174AA002050C82D0027AD46 /* Constants.swift */; };
 		7174AA042050C8E80027AD46 /* MacroInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174AA032050C8E80027AD46 /* MacroInfoVC.swift */; };
+		71A9E0022067330D00E0AA8C /* EnterTodaysMacrosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A9E0012067330D00E0AA8C /* EnterTodaysMacrosVC.swift */; };
 		71F6F4EB204CB21B009F2B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */; };
 		71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */; };
 		71F6F4F0204CB21B009F2B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F6F4EE204CB21B009F2B1A /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		7174AA002050C82D0027AD46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7174AA032050C8E80027AD46 /* MacroInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroInfoVC.swift; sourceTree = "<group>"; };
+		71A9E0012067330D00E0AA8C /* EnterTodaysMacrosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTodaysMacrosVC.swift; sourceTree = "<group>"; };
 		71F6F4E7204CB21B009F2B1A /* WeeklyMacros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyMacros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F6F4EA204CB21B009F2B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeMacrosVC.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				71F6F4EC204CB21B009F2B1A /* InitializeMacrosVC.swift */,
 				7174AA032050C8E80027AD46 /* MacroInfoVC.swift */,
+				71A9E0012067330D00E0AA8C /* EnterTodaysMacrosVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				71F6F4ED204CB21B009F2B1A /* InitializeMacrosVC.swift in Sources */,
 				71F6F4F3204CB21B009F2B1A /* WeeklyMacros.xcdatamodeld in Sources */,
 				71F6F51D204CC81D009F2B1A /* Utilities.swift in Sources */,
+				71A9E0022067330D00E0AA8C /* EnterTodaysMacrosVC.swift in Sources */,
 				71F6F4EB204CB21B009F2B1A /* AppDelegate.swift in Sources */,
 				7174AA012050C82D0027AD46 /* Constants.swift in Sources */,
 				7174AA042050C8E80027AD46 /* MacroInfoVC.swift in Sources */,
