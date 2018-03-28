@@ -9,4 +9,6 @@
 struct Constants {
     static let daysInWeek : Double = 7
     static let appUser = "AppUser"
+    static let macrosNavigationControllerId = "MacrosNavigationController"
+    static let inializeMacrosVCId = "InitializeMacrosVC"
 }
