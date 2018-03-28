@@ -30,13 +30,23 @@ class CoreDataHelper {
         do {
             try context.save()
             print("saved to Core Data")
-        } catch {
-            print("Saving to Core Data Failed")
+        } catch let error as NSError {
+            print("Saving to Core Data Failed. \(error), \(error.userInfo)")
         }
     }
     
     static func updateMacros(calories: Double, carbohydrates: Double, protein: Double, fat: Double) {
-        let currentMacros = CoreDataHelper.getMacros()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Macros")
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.count > 0 {
+                
+            }
+        } catch let error as NSError {
+            print("Couldn't fetch in updateMacros. \(error), \(error.userInfo)")
+        }
     }
     
     static func getMacros() -> NSManagedObject? {
@@ -55,7 +65,7 @@ class CoreDataHelper {
                 }
             }
         } catch let error as NSError {
-            print("Couldn't fetch. \(error), \(error.userInfo)")
+            print("Couldn't fetch in getMacros. \(error), \(error.userInfo)")
         }
         return nil
     }
@@ -91,7 +101,7 @@ class CoreDataHelper {
                 }
             }
         } catch let error as NSError {
-            print("Couldn't fetch. \(error), \(error.userInfo)")
+            print("Couldn't fetch in doesMacroExist. \(error), \(error.userInfo)")
             return false
         }
         return false
