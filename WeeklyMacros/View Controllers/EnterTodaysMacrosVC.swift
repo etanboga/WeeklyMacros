@@ -33,7 +33,6 @@ class EnterTodaysMacrosVC : UIViewController {
         if (!passedNumberChecks) {
             return
         }
-        
         if let calories = caloriesTextField?.text, let carbohydrates = carbohydratesTextField?.text,
             let protein = proteinTextField?.text, let fat = fatTextField?.text {
             if let caloriesAsDouble = Double(calories), let carbohydratesAsDouble = Double(carbohydrates),
@@ -42,6 +41,19 @@ class EnterTodaysMacrosVC : UIViewController {
                 performSegue(withIdentifier: Constants.unwindToMacroInfoVCSegueId, sender: self)
             }
         }
+    }
+    
+    //MARK: - Segue check
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == Constants.unwindToMacroInfoVCSegueId {
+            let passedEmptyChecks = Utilities.performEmptyChecks(caloriesTextField: caloriesTextField, carbohydratesTextField: carbohydratesTextField, proteinTextField: proteinTextField, fatTextField: fatTextField, errorLabel: errorLabel)
+            let passedNumberChecks = Utilities.performNumberChecks(caloriesTextField: caloriesTextField, carbohydratesTextField: carbohydratesTextField, proteinTextField: proteinTextField, fatTextField: fatTextField, errorLabel: errorLabel)
+            if (!passedNumberChecks || !passedEmptyChecks) {
+                return false
+            }
+        }
+        return true
     }
 }
 
