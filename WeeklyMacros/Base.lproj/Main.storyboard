@@ -378,6 +378,7 @@
                                 <state key="normal" title="Done!"/>
                                 <connections>
                                     <action selector="doneButtonClicked:" destination="Tqg-l3-ONa" eventType="touchUpInside" id="3pd-oV-vrc"/>
+                                    <segue destination="zEy-nJ-gIX" kind="unwind" identifier="unwindToMacroInfoVC" unwindAction="unwindToMacroInfoVCWithSegue:" id="arU-MI-IFQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-Vy-T95">
@@ -411,6 +412,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAV-3x-jLk" sceneMemberID="firstResponder"/>
+                <exit id="zEy-nJ-gIX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1268" y="-580.65967016491754"/>
         </scene>

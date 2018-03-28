@@ -15,8 +15,10 @@ class EnterTodaysMacrosVC : UIViewController {
     @IBOutlet weak var proteinTextField: UITextField!
     @IBOutlet weak var fatTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.text = ""
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,10 +38,8 @@ class EnterTodaysMacrosVC : UIViewController {
             let protein = proteinTextField?.text, let fat = fatTextField?.text {
             if let caloriesAsDouble = Double(calories), let carbohydratesAsDouble = Double(carbohydrates),
                 let proteinAsDouble = Double(protein), let fatAsDouble = Double(fat) {
-                print(caloriesAsDouble)
-                print(carbohydratesAsDouble)
-                print(proteinAsDouble)
-                print(fatAsDouble)
+                CoreDataHelper.updateMacros(calories: caloriesAsDouble, carbohydrates: carbohydratesAsDouble, protein: proteinAsDouble, fat: fatAsDouble)
+                performSegue(withIdentifier: Constants.unwindToMacroInfoVCSegueId, sender: self)
             }
         }
     }
