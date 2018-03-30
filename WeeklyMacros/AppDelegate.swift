@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //is initial VC is checked for initializeMacros however is set programatically here
+        
         if (CoreDataHelper.doesMacroExist()) {
             let initialVC = storyboard.instantiateViewController(withIdentifier: Constants.macrosNavigationControllerId)
             self.window?.rootViewController = initialVC
             self.window?.makeKeyAndVisible()
-            print(CoreDataHelper.getMacros() ?? "")
         } else {
             let initialVC = storyboard.instantiateViewController(withIdentifier: Constants.inializeMacrosVCId)
             self.window?.rootViewController = initialVC

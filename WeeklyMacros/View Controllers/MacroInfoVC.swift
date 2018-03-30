@@ -28,10 +28,7 @@ class MacroInfoVC : UIViewController {
     
     private func retrieveMacros() {
         guard let currentMacros = CoreDataHelper.getMacros() else { return }
-        let numberToDivideBy = 7.0
-        
-        
-        
+        let numberToDivideBy = getDaysRemainingInWeek()
         let calories = (currentMacros.value(forKey: "calories") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         let carbohydrates = (currentMacros.value(forKey: "carbohydrates") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         let protein = (currentMacros.value(forKey: "protein") as! Double / numberToDivideBy).rounded(toPlaces: 2)
@@ -48,12 +45,42 @@ class MacroInfoVC : UIViewController {
         fatLabel.text = fatString
     }
     
+    private func getDaysRemainingInWeek() -> Double {
+        
+        var currentDayAsInt : Double = Double(Calendar.current.component(.weekday, from: Date()) - 2) //accommodate for sunday being the 0th day?? like why though?
+        if currentDayAsInt == -1 { //special case for Saturday
+            currentDayAsInt = 5
+        } else if currentDayAsInt == -2 { //special case for Sunday
+            currentDayAsInt = 6
+        }
+        let daysRemaining = Constants.daysInWeek - currentDayAsInt
+        return daysRemaining
+    }
+    
     //MARK: - Unwind Segue
     
     @IBAction func unwindToMacroInfoVC(segue: UIStoryboardSegue) {
         
     }
     
+    //MARK: - Test / Explanation functions
+    
+    //prints all days with remaining days (AKA divide value for Macros) to see how the value is calculated
+    
+    private func printWeekDaysWithRemainingDays() {
+        let daysOfWeek = 7
+        for  index in 0..<daysOfWeek {
+            let f = DateFormatter()
+            var dateComponents = DateComponents()
+            dateComponents.setValue(index, for: .weekday)
+            var currentDayOfWeek = index - 1
+            if (currentDayOfWeek == -1 )  { //if currentDayOfWeekWasSunday
+                currentDayOfWeek = 6 //set it to 6 so that it is the last day
+            }
+            print(f.weekdaySymbols[dateComponents.weekday!] + "     "  + String(daysOfWeek - currentDayOfWeek))
+            
+        }
+    }
 }
 
 extension Double {
