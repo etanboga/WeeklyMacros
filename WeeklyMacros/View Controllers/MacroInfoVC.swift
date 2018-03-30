@@ -34,10 +34,10 @@ class MacroInfoVC : UIViewController {
         let protein = (currentMacros.value(forKey: "protein") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         let fat = (currentMacros.value(forKey: "fat") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         
-        let caloriesString = String(calories)
-        let carbohydratesString = String(carbohydrates) + "g"
-        let proteinString = String(protein) + "g"
-        let fatString = String(fat) + "g"
+        let caloriesString = String(calories) + " kcal"
+        let carbohydratesString = String(carbohydrates) + " g"
+        let proteinString = String(protein) +  " g"
+        let fatString = String(fat) + " g"
         
         caloriesLabel.text = caloriesString
         carbohydratesLabel.text = carbohydratesString
