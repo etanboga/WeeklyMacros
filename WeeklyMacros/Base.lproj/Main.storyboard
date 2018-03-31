@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Daily Macros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0j-MY-mDB">
-                                <rect key="frame" x="98" y="40" width="179" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <rect key="frame" x="82" y="80" width="212" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0039215686269999999" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-cn-D2v">
-                                <rect key="frame" x="60" y="229" width="255" height="210"/>
+                                <rect key="frame" x="60" y="178.5" width="255" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pt9-pS-YFG">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="30"/>
@@ -133,10 +133,10 @@
                         <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zgk-X4-IBO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4uw-pb-yk0"/>
-                            <constraint firstItem="dPA-cn-D2v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Nm-bx-oKd"/>
+                            <constraint firstItem="dPA-cn-D2v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="8Nm-bx-oKd"/>
                             <constraint firstItem="3uj-IX-7IJ" firstAttribute="top" secondItem="zgk-X4-IBO" secondAttribute="bottom" constant="40" id="Bi9-99-vPR"/>
                             <constraint firstItem="dPA-cn-D2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Doa-2h-Avm"/>
-                            <constraint firstItem="r0j-MY-mDB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HXJ-5g-6sg"/>
+                            <constraint firstItem="r0j-MY-mDB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="HXJ-5g-6sg"/>
                             <constraint firstItem="3uj-IX-7IJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YAN-Uf-L9k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3uj-IX-7IJ" secondAttribute="bottom" constant="92" id="YKy-ff-IYj"/>
                             <constraint firstItem="3uj-IX-7IJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="Zoc-dw-ZFx"/>
@@ -305,13 +305,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Today's Macros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-uv-DpF">
-                                <rect key="frame" x="85.5" y="84" width="204.5" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <rect key="frame" x="66.5" y="124" width="242" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0039215686269999999" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YyH-sh-iNn">
-                                <rect key="frame" x="60" y="229" width="255" height="210"/>
+                                <rect key="frame" x="60" y="178.5" width="255" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-hb-Ayt">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="30"/>
@@ -417,12 +417,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YyH-sh-iNn" firstAttribute="centerY" secondItem="7Ey-ql-ccv" secondAttribute="centerY" id="AkQ-Kh-Exl"/>
+                            <constraint firstItem="YyH-sh-iNn" firstAttribute="centerY" secondItem="7Ey-ql-ccv" secondAttribute="centerY" constant="-50" id="AkQ-Kh-Exl"/>
                             <constraint firstItem="rnj-BA-2SQ" firstAttribute="trailing" secondItem="YyH-sh-iNn" secondAttribute="trailing" constant="60" id="AuF-R2-wq0"/>
                             <constraint firstItem="Z7P-YM-Vlg" firstAttribute="top" secondItem="y7J-Vy-T95" secondAttribute="bottom" constant="40" id="MT5-Wd-uG9"/>
                             <constraint firstItem="Z7P-YM-Vlg" firstAttribute="width" secondItem="7Ey-ql-ccv" secondAttribute="width" multiplier="0.7" id="TSN-39-8Bh"/>
                             <constraint firstItem="Z7P-YM-Vlg" firstAttribute="height" secondItem="7Ey-ql-ccv" secondAttribute="height" multiplier="0.07" id="XiW-1e-bfC"/>
-                            <constraint firstItem="ef5-uv-DpF" firstAttribute="top" secondItem="rnj-BA-2SQ" secondAttribute="top" constant="20" id="d0A-dp-8dq"/>
+                            <constraint firstItem="ef5-uv-DpF" firstAttribute="top" secondItem="rnj-BA-2SQ" secondAttribute="top" constant="60" id="d0A-dp-8dq"/>
                             <constraint firstItem="Z7P-YM-Vlg" firstAttribute="centerX" secondItem="7Ey-ql-ccv" secondAttribute="centerX" id="iBs-gg-4aH"/>
                             <constraint firstItem="ef5-uv-DpF" firstAttribute="centerX" secondItem="7Ey-ql-ccv" secondAttribute="centerX" id="lBH-Hi-gV2"/>
                             <constraint firstItem="rnj-BA-2SQ" firstAttribute="bottom" secondItem="Z7P-YM-Vlg" secondAttribute="bottom" constant="92" id="mUd-GF-sN6"/>
