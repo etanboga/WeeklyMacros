@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnterTodaysMacrosVC : UIViewController {
+class EnterTodaysMacrosVC : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var carbohydratesTextField: UITextField!
@@ -19,6 +19,10 @@ class EnterTodaysMacrosVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
+        caloriesTextField.delegate = self
+        carbohydratesTextField.delegate = self
+        proteinTextField.delegate = self
+        fatTextField.delegate = self
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,5 +59,16 @@ class EnterTodaysMacrosVC : UIViewController {
         }
         return true
     }
+    
+    //MARK: - Text Field Delegate Functions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InitializeMacrosVC: UIViewController {
+class InitializeMacrosVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var carbohydratesTextField: UITextField!
@@ -20,6 +20,10 @@ class InitializeMacrosVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         errorLabel.text = ""
+        caloriesTextField.delegate = self
+        carbohydratesTextField.delegate = self
+        proteinTextField.delegate = self
+        fatTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +52,16 @@ class InitializeMacrosVC: UIViewController {
                 print("didn't convert to double")
             }
         }
+    }
+    
+    //MARK: - Text Field Delegate Functions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
