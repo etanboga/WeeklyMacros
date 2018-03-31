@@ -45,10 +45,8 @@ class CoreDataHelper {
                     if let username = result.value(forKey: "username") as? String {
                         if (username == Constants.appUser) {
                             //then update macros
-                            print("entered macro update")
                             let coreDataHelper = CoreDataHelper()
                             coreDataHelper.updateMacroObject(caloriesEaten: calories, carbohydratesEaten: carbohydrates, proteinEaten: protein, fatEaten: fat, macro: result)
-                            print(result)
                         }
                     }
                 }
@@ -91,6 +89,12 @@ class CoreDataHelper {
         }
         catch let error as NSError {
             print("Couldn't delete. \(error), \(error.userInfo)")
+        }
+        do {
+             try context.save()
+        }
+        catch let error as NSError {
+            print("Deletion not saved. \(error), \(error.userInfo)")
         }
     }
     
