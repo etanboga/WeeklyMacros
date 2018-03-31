@@ -17,10 +17,11 @@ class CoreDataHelper {
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Macros", in: context)
         let newMacro = NSManagedObject(entity: entity!, insertInto: context)
-        let caloriesForWeek = calories * Constants.daysInWeek
-        let carbsForWeek = carbohydrates * Constants.daysInWeek
-        let proteinForWeek = protein * Constants.daysInWeek
-        let fatForWeek = fat * Constants.daysInWeek
+        let daysRemainingInWeek = Utilities.getDaysRemainingInWeek()
+        let caloriesForWeek = calories * daysRemainingInWeek
+        let carbsForWeek = carbohydrates * daysRemainingInWeek
+        let proteinForWeek = protein * daysRemainingInWeek
+        let fatForWeek = fat * daysRemainingInWeek
         newMacro.setValue(Constants.appUser, forKey: "username")
         newMacro.setValue(caloriesForWeek, forKey: "calories")
         newMacro.setValue(carbsForWeek, forKey: "carbohydrates")

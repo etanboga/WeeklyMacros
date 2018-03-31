@@ -11,5 +11,6 @@ struct Constants {
     static let daysInWeek : Double = 7
     static let inializeMacrosVCId = "InitializeMacrosVC"
     static let macrosNavigationControllerId = "MacrosNavigationController"
+    static let orangeColorString = "#FF6542"
     static let unwindToMacroInfoVCSegueId = "unwindToMacroInfoVC"
 }

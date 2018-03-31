@@ -28,7 +28,7 @@ class MacroInfoVC : UIViewController {
     
     private func retrieveMacros() {
         guard let currentMacros = CoreDataHelper.getMacros() else { return }
-        let numberToDivideBy = getDaysRemainingInWeek()
+        let numberToDivideBy = Utilities.getDaysRemainingInWeek()
         let calories = (currentMacros.value(forKey: "calories") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         let carbohydrates = (currentMacros.value(forKey: "carbohydrates") as! Double / numberToDivideBy).rounded(toPlaces: 2)
         let protein = (currentMacros.value(forKey: "protein") as! Double / numberToDivideBy).rounded(toPlaces: 2)
@@ -40,19 +40,22 @@ class MacroInfoVC : UIViewController {
         let fatString = String(fat) + " g"
         
         caloriesLabel.text = caloriesString
-        carbohydratesLabel.text = carbohydratesString
-        proteinLabel.text = proteinString
-        fatLabel.text = fatString
-    }
-    
-    private func getDaysRemainingInWeek() -> Double {
-        let currentLocalDate = Date().addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
-        var currentDayAsInt : Double = Double(Calendar.current.component(.weekday, from: currentLocalDate) - 2) //accommodate for Sunday being the first day
-        if currentDayAsInt == -1 { //special case for Sunday
-            currentDayAsInt = 6
+        let orangeColor = UIColor(hexString: Constants.orangeColorString)
+        if calories < 0 {
+            caloriesLabel.textColor = orangeColor
         }
-        let daysRemaining = Constants.daysInWeek - currentDayAsInt
-        return daysRemaining
+        carbohydratesLabel.text = carbohydratesString
+        if carbohydrates < 0 {
+            carbohydratesLabel.textColor = orangeColor
+        }
+        proteinLabel.text = proteinString
+        if protein < 0 {
+            proteinLabel.textColor = orangeColor
+        }
+        fatLabel.text = fatString
+        if fat < 0 {
+            fatLabel.textColor = orangeColor
+        }
     }
     
     //MARK: - Unwind Segue
@@ -98,5 +101,34 @@ extension Double {
     func rounded(toPlaces places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
+    }
+}
+
+extension UIColor {
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let scanner = Scanner(string: hexString)
+        if (hexString.hasPrefix("#")) {
+            scanner.scanLocation = 1
+        }
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    func toHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format:"#%06x", rgb)
     }
 }

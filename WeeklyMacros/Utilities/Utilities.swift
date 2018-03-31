@@ -44,4 +44,13 @@ class Utilities {
         return true
     }
     
+    static func getDaysRemainingInWeek() -> Double {
+        let currentLocalDate = Date().addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
+        var currentDayAsInt : Double = Double(Calendar.current.component(.weekday, from: currentLocalDate) - 2) //accommodate for Sunday being the first day
+        if currentDayAsInt == -1 { //special case for Sunday
+            currentDayAsInt = 6
+        }
+        let daysRemaining = Constants.daysInWeek - currentDayAsInt
+        return daysRemaining
+    }
 }
