@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //delete saved data on Monday for the new week
         let currentLocalDate = Date().addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
-        var currentDayAsInt = Calendar.current.component(.weekday, from: currentLocalDate)
+        let currentDayAsInt = Calendar.current.component(.weekday, from: currentLocalDate)
         if (currentDayAsInt == 2 && !CoreDataHelper.didLog()) { //if monday, and no current log, then delete macros
             CoreDataHelper.deleteMacros()
         } else if (currentDayAsInt != 2) { //if on another day, then set didLog to false so that macros can be deleted next monday
@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
         
     }
 
